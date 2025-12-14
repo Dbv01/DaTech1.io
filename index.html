@@ -175,7 +175,7 @@
             opacity: 1;
         }
 
-        /* НАВИГАЦИЯ */
+        /* УЛУЧШЕННАЯ НАВИГАЦИЯ С ИКОНКАМИ */
         .navbar {
             position: fixed;
             top: 0;
@@ -263,6 +263,85 @@
             border-radius: 2px;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-icon-btn {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
+            background: var(--light);
+            border: none;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            font-size: 20px;
+        }
+
+        .nav-icon-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.25);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .user-avatar i {
+            font-size: 18px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--danger);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            min-width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         .burger-menu {
             display: none;
             background: none;
@@ -321,36 +400,6 @@
 
         .mobile-nav .nav-link:last-child {
             border-bottom: none;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: var(--danger);
-            color: white;
-            font-size: 12px;
-            font-weight: 700;
-            min-width: 20px;
-            height: 20px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 6px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         /* СЕКЦИИ */
@@ -425,7 +474,7 @@
         }
 
         .product-image {
-            height: 300px; /* Увеличена высота */
+            height: 300px;
             background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
             display: flex;
             align-items: center;
@@ -465,7 +514,7 @@
         }
 
         .product-title {
-            font-size: 24px; /* Увеличен шрифт */
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--dark);
@@ -474,7 +523,7 @@
 
         .product-description {
             color: var(--gray);
-            font-size: 16px; /* Увеличен шрифт */
+            font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
             flex: 1;
@@ -488,7 +537,7 @@
         }
 
         .current-price {
-            font-size: 32px; /* Увеличен шрифт */
+            font-size: 32px;
             font-weight: 700;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
@@ -497,7 +546,7 @@
         }
 
         .old-price {
-            font-size: 20px; /* Увеличен шрифт */
+            font-size: 20px;
             color: var(--gray);
             text-decoration: line-through;
         }
@@ -731,7 +780,7 @@
         /* ГРИДЫ */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); /* Увеличен минимальный размер */
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
@@ -1077,6 +1126,353 @@
             font-size: 14px;
         }
 
+        /* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* СТИЛИ ДЛЯ СТРАНИЦЫ О КОМПАНИИ */
+        .about-page {
+            max-width: 1200px;
+        }
+        
+        .about-hero {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin: 60px 0;
+        }
+        
+        .about-content h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            line-height: 1.1;
+        }
+        
+        .about-content p {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .about-stats .stat-item {
+            text-align: center;
+            background: white;
+            padding: 25px 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .about-stats .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .about-stats .stat-label {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .about-image .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 100px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin: 0 auto 25px;
+        }
+        
+        .mission-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .mission-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* СТИЛИ ДЛЯ КОНТАКТОВ */
+        .contacts-page {
+            max-width: 1200px;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+        
+        .contact-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .contact-card > p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info strong {
+            display: block;
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* СТИЛИ ДЛЯ БЛОГА */
+        .blog-page {
+            max-width: 1200px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .blog-image {
+            height: 200px;
+            position: relative;
+        }
+        
+        .blog-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        
+        .blog-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: var(--light);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+        
+        .blog-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+        
+        .blog-content > p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex: 1;
+        }
+        
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .blog-author {
+            color: var(--gray);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition-fast);
+        }
+        
+        .read-more:hover {
+            color: var(--accent-dark);
+            gap: 10px;
+        }
+
         /* АДАПТИВНОСТЬ */
         @media (max-width: 767px) {
             .nav-links {
@@ -1134,6 +1530,10 @@
             .modal-content {
                 max-width: 95%;
             }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (min-width: 768px) and (max-width: 1023px) {
@@ -1165,6 +1565,23 @@
             
             .categories-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-hero {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .about-content {
+                flex: 1;
+            }
+            
+            .about-image {
+                flex: 1;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -1209,11 +1626,11 @@
                 
                 <div class="nav-actions">
                     <div class="user-menu" id="user-section">
-                        <button class="btn-icon" onclick="showAuthModal('login')">
+                        <div class="user-avatar" onclick="showAuthModal('login')">
                             <i class="fas fa-user"></i>
-                        </button>
+                        </div>
                     </div>
-                    <button class="btn-icon" onclick="openCart()">
+                    <button class="nav-icon-btn" onclick="openCart()" title="Корзина">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count" id="cart-count">0</span>
                     </button>
@@ -1241,7 +1658,7 @@
                         <button class="btn btn-primary" onclick="showPage('catalog')">
                             <i class="fas fa-shopping-bag"></i> Смотреть каталог
                         </button>
-                        <button class="btn btn-outline" onclick="openProductsModal('popular')">
+                        <button class="btn btn-outline" onclick="openCategory('popular')">
                             <i class="fas fa-bolt"></i> Новинки 2025
                         </button>
                         <button class="btn btn-secondary" onclick="showPage('contacts')">
@@ -1317,7 +1734,7 @@
                     <p>Наши преимущества</p>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
@@ -1371,60 +1788,6 @@
                 </div>
             </div>
         </section>
-
-        <style>
-            .features-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
-                margin-top: 50px;
-            }
-            
-            .feature-card {
-                background: white;
-                padding: 35px 30px;
-                border-radius: var(--radius);
-                text-align: center;
-                transition: var(--transition);
-                border: 2px solid transparent;
-            }
-            
-            .feature-card:hover {
-                transform: translateY(-10px);
-                border-color: var(--accent);
-                box-shadow: var(--shadow-heavy);
-            }
-            
-            .feature-icon {
-                width: 70px;
-                height: 70px;
-                background: var(--accent-gradient);
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 32px;
-                margin: 0 auto 25px;
-                transition: var(--transition);
-            }
-            
-            .feature-card:hover .feature-icon {
-                transform: scale(1.1) rotate(5deg);
-            }
-            
-            .feature-card h3 {
-                font-size: 22px;
-                margin-bottom: 15px;
-                color: var(--dark);
-            }
-            
-            .feature-card p {
-                color: var(--gray);
-                line-height: 1.6;
-                font-size: 15px;
-            }
-        </style>
     </div>
 
     <!-- СТРАНИЦА: КАТАЛОГ -->
@@ -1601,139 +1964,6 @@
                 </div>
             </section>
         </div>
-
-        <style>
-            .about-page {
-                max-width: 1200px;
-            }
-            
-            .about-hero {
-                display: flex;
-                flex-direction: column;
-                gap: 60px;
-                margin: 60px 0;
-            }
-            
-            @media (min-width: 992px) {
-                .about-hero {
-                    flex-direction: row;
-                    align-items: center;
-                }
-                
-                .about-content {
-                    flex: 1;
-                }
-                
-                .about-image {
-                    flex: 1;
-                }
-            }
-            
-            .about-content h2 {
-                font-size: 42px;
-                margin-bottom: 30px;
-                color: var(--dark);
-                line-height: 1.1;
-            }
-            
-            .about-content p {
-                font-size: 18px;
-                color: var(--gray);
-                line-height: 1.6;
-                margin-bottom: 40px;
-            }
-            
-            .about-stats {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-                margin-top: 40px;
-            }
-            
-            @media (min-width: 768px) {
-                .about-stats {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-            }
-            
-            .about-stats .stat-item {
-                text-align: center;
-                background: white;
-                padding: 25px 20px;
-                border-radius: var(--radius);
-                box-shadow: var(--shadow);
-            }
-            
-            .about-stats .stat-number {
-                font-size: 36px;
-                font-weight: 800;
-                margin-bottom: 8px;
-            }
-            
-            .about-stats .stat-label {
-                color: var(--gray);
-                font-size: 14px;
-            }
-            
-            .about-image .image-placeholder {
-                width: 100%;
-                height: 300px;
-                background: var(--accent-gradient);
-                border-radius: var(--radius);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 100px;
-                box-shadow: var(--shadow-heavy);
-            }
-            
-            .mission-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
-                margin-top: 50px;
-            }
-            
-            .mission-card {
-                background: white;
-                padding: 35px 30px;
-                border-radius: var(--radius);
-                text-align: center;
-                transition: var(--transition);
-                border: 2px solid transparent;
-            }
-            
-            .mission-card:hover {
-                transform: translateY(-10px);
-                border-color: var(--accent);
-                box-shadow: var(--shadow-heavy);
-            }
-            
-            .mission-icon {
-                width: 70px;
-                height: 70px;
-                background: var(--accent-gradient);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 32px;
-                margin: 0 auto 25px;
-            }
-            
-            .mission-card h3 {
-                font-size: 22px;
-                margin-bottom: 15px;
-                color: var(--dark);
-            }
-            
-            .mission-card p {
-                color: var(--gray);
-                line-height: 1.6;
-            }
-        </style>
     </div>
 
     <!-- СТРАНИЦА: КОНТАКТЫ -->
@@ -1806,79 +2036,6 @@
                 </div>
             </div>
         </div>
-
-        <style>
-            .contacts-page {
-                max-width: 1200px;
-            }
-            
-            .contacts-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 30px;
-                margin: 60px 0;
-            }
-            
-            .contact-card {
-                background: white;
-                padding: 35px 30px;
-                border-radius: var(--radius);
-                text-align: center;
-                transition: var(--transition);
-                border: 2px solid transparent;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-            }
-            
-            .contact-card:hover {
-                transform: translateY(-10px);
-                border-color: var(--accent);
-                box-shadow: var(--shadow-heavy);
-            }
-            
-            .contact-icon {
-                width: 80px;
-                height: 80px;
-                background: var(--accent-gradient);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 36px;
-                margin: 0 auto 25px;
-            }
-            
-            .contact-card h3 {
-                font-size: 24px;
-                margin-bottom: 15px;
-                color: var(--dark);
-            }
-            
-            .contact-card > p {
-                color: var(--gray);
-                line-height: 1.6;
-                margin-bottom: 20px;
-                flex-grow: 1;
-            }
-            
-            .contact-info {
-                margin-bottom: 20px;
-            }
-            
-            .contact-info strong {
-                display: block;
-                font-size: 18px;
-                color: var(--dark);
-                margin-bottom: 5px;
-            }
-            
-            .contact-info p {
-                color: var(--gray);
-                font-size: 14px;
-            }
-        </style>
     </div>
 
     <!-- СТРАНИЦА: БЛОГ -->
@@ -1948,124 +2105,6 @@
                 </div>
             </div>
         </div>
-
-        <style>
-            .blog-page {
-                max-width: 1200px;
-            }
-            
-            .blog-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-                gap: 30px;
-                margin: 60px 0;
-            }
-            
-            @media (max-width: 768px) {
-                .blog-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-            
-            .blog-card {
-                background: white;
-                border-radius: var(--radius);
-                overflow: hidden;
-                transition: var(--transition);
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .blog-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-heavy);
-            }
-            
-            .blog-image {
-                height: 200px;
-                position: relative;
-            }
-            
-            .blog-date {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: rgba(0, 0, 0, 0.7);
-                color: white;
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 600;
-                backdrop-filter: blur(10px);
-            }
-            
-            .blog-content {
-                padding: 25px;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .blog-category {
-                display: inline-block;
-                background: var(--light);
-                color: var(--accent);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 700;
-                margin-bottom: 15px;
-                align-self: flex-start;
-            }
-            
-            .blog-content h3 {
-                font-size: 20px;
-                font-weight: 700;
-                margin-bottom: 15px;
-                color: var(--dark);
-                line-height: 1.4;
-            }
-            
-            .blog-content > p {
-                color: var(--gray);
-                line-height: 1.6;
-                margin-bottom: 25px;
-                flex: 1;
-            }
-            
-            .blog-footer {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: auto;
-            }
-            
-            .blog-author {
-                color: var(--gray);
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-            
-            .read-more {
-                color: var(--accent);
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                transition: var(--transition-fast);
-            }
-            
-            .read-more:hover {
-                color: var(--accent-dark);
-                gap: 10px;
-            }
-        </style>
     </div>
 
     <!-- ФУТЕР -->
@@ -2138,9 +2177,6 @@
             
             <div class="copyright">
                 <p>&copy; 2023-2025 DaTech. Основано в 2023 году. Все права защищены.</p>
-                <p style="margin-top: 10px; font-size: 13px; color: rgba(255, 255, 255, 0.5);">
-                    ИНН: 1234567890 | ОГРН: 1234567890123
-                </p>
             </div>
         </div>
     </footer>
@@ -2421,30 +2457,192 @@
                 const firstLetter = currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 
                                   currentUser.email.charAt(0).toUpperCase();
                 userSection.innerHTML = `
-                    <div class="user-avatar">${firstLetter}</div>
-                    <button class="logout-btn" onclick="logout()">
-                        Выйти
-                    </button>
+                    <div class="user-avatar" onclick="showAuthModal('profile')">
+                        ${firstLetter}
+                    </div>
                 `;
             } else {
                 userSection.innerHTML = `
-                    <button class="btn-icon" onclick="showAuthModal('login')">
+                    <div class="user-avatar" onclick="showAuthModal('login')">
                         <i class="fas fa-user"></i>
-                    </button>
+                    </div>
                 `;
             }
         }
 
         function showAuthModal(mode = 'login') {
-            // ... (аналогично вашему коду)
+            const modal = document.getElementById('auth-modal');
+            const title = document.getElementById('auth-title');
+            const content = document.getElementById('auth-form-content');
+            
+            if (mode === 'login') {
+                title.textContent = 'Вход в аккаунт';
+                content.innerHTML = `
+                    <div style="max-width: 400px; margin: 0 auto;">
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Email</label>
+                            <input type="email" id="login-email" placeholder="your@email.com" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Пароль</label>
+                            <input type="password" id="login-password" placeholder="••••••••" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="handleAuth('login')" style="width: 100%; margin-bottom: 20px;">
+                            <i class="fas fa-sign-in-alt"></i> Войти
+                        </button>
+                        
+                        <div style="text-align: center; color: var(--gray); font-size: 15px; margin-bottom: 20px;">
+                            Нет аккаунта? 
+                            <a href="#" onclick="showAuthModal('register')" style="color: var(--accent); font-weight: 600; text-decoration: none; cursor: pointer;">
+                                Зарегистрироваться
+                            </a>
+                        </div>
+                        
+                        <div style="text-align: center; color: var(--gray); font-size: 14px;">
+                            Или войдите через
+                            <div style="display: flex; gap: 15px; margin-top: 15px;">
+                                <button class="btn btn-secondary" style="flex: 1;" onclick="showNotification('Вход через Telegram временно недоступен', 'info')">
+                                    <i class="fab fa-telegram"></i>
+                                </button>
+                                <button class="btn btn-secondary" style="flex: 1;" onclick="showNotification('Вход через Google временно недоступен', 'info')">
+                                    <i class="fab fa-google"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (mode === 'register') {
+                title.textContent = 'Регистрация';
+                content.innerHTML = `
+                    <div style="max-width: 400px; margin: 0 auto;">
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Имя</label>
+                            <input type="text" id="register-name" placeholder="Ваше имя" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Email</label>
+                            <input type="email" id="register-email" placeholder="your@email.com" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Пароль</label>
+                            <input type="password" id="register-password" placeholder="••••••••" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark);">Подтвердите пароль</label>
+                            <input type="password" id="register-confirm" placeholder="••••••••" style="width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark); font-size: 16px;">
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="handleAuth('register')" style="width: 100%; margin-bottom: 20px;">
+                            <i class="fas fa-user-plus"></i> Зарегистрироваться
+                        </button>
+                        
+                        <div style="text-align: center; color: var(--gray); font-size: 15px;">
+                            Уже есть аккаунт? 
+                            <a href="#" onclick="showAuthModal('login')" style="color: var(--accent); font-weight: 600; text-decoration: none; cursor: pointer;">
+                                Войти
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (mode === 'profile') {
+                title.textContent = 'Профиль';
+                content.innerHTML = `
+                    <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 36px; font-weight: 600; margin: 0 auto 25px;">
+                            ${currentUser.name ? currentUser.name.charAt(0).toUpperCase() : currentUser.email.charAt(0).toUpperCase()}
+                        </div>
+                        
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: var(--dark);">${currentUser.name || 'Пользователь'}</h3>
+                        <p style="color: var(--gray); margin-bottom: 30px; font-size: 16px;">${currentUser.email}</p>
+                        
+                        <div style="background: var(--light); padding: 25px; border-radius: var(--radius); margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span style="color: var(--gray);">Заказов:</span>
+                                <span style="font-weight: 600;">${cart.length}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span style="color: var(--gray);">В избранном:</span>
+                                <span style="font-weight: 600;">${favorites.size}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--gray);">Дата регистрации:</span>
+                                <span style="font-weight: 600;">Сегодня</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px;">
+                            <button class="btn btn-secondary" style="flex: 1;" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i> Выйти
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            openModal('auth-modal');
         }
 
         function handleAuth(action) {
-            // ... (аналогично вашему коду)
+            if (action === 'login') {
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                if (!email || !password) {
+                    showNotification('Заполните все поля', 'error');
+                    return;
+                }
+                
+                // Простая демо-авторизация
+                currentUser = {
+                    email: email,
+                    name: email.split('@')[0]
+                };
+                
+                localStorage.setItem('datech_user', JSON.stringify(currentUser));
+                updateUserUI();
+                closeModal('auth-modal');
+                showNotification(`Добро пожаловать, ${currentUser.name}!`, 'success');
+                
+            } else if (action === 'register') {
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const confirm = document.getElementById('register-confirm').value;
+                
+                if (!name || !email || !password || !confirm) {
+                    showNotification('Заполните все поля', 'error');
+                    return;
+                }
+                
+                if (password !== confirm) {
+                    showNotification('Пароли не совпадают', 'error');
+                    return;
+                }
+                
+                // Простая демо-регистрация
+                currentUser = {
+                    email: email,
+                    name: name
+                };
+                
+                localStorage.setItem('datech_user', JSON.stringify(currentUser));
+                updateUserUI();
+                closeModal('auth-modal');
+                showNotification(`Аккаунт создан, ${name}!`, 'success');
+            }
         }
 
         function logout() {
-            // ... (аналогично вашему коду)
+            currentUser = null;
+            localStorage.removeItem('datech_user');
+            updateUserUI();
+            closeModal('auth-modal');
+            showNotification('Вы вышли из аккаунта', 'info');
         }
 
         // ===== ТОВАРЫ =====
@@ -2960,6 +3158,11 @@
             }, duration);
         }
 
+        function openCheckoutModal() {
+            showNotification('Оформление заказа временно недоступно. Свяжитесь с нами в Telegram для оформления заказа', 'info');
+            closeModal('cart-modal');
+        }
+
         // ===== ЭКСПОРТ ФУНКЦИЙ =====
         window.showPage = showPage;
         window.openCategory = openCategory;
@@ -2976,6 +3179,10 @@
         window.updatePriceFilter = updatePriceFilter;
         window.resetFilters = resetFilters;
         window.loadMoreProducts = loadMoreProducts;
+        window.showAuthModal = showAuthModal;
+        window.handleAuth = handleAuth;
+        window.logout = logout;
+        window.openCheckoutModal = openCheckoutModal;
     </script>
 </body>
 </html>
