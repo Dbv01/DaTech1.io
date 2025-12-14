@@ -1362,115 +1362,159 @@
             font-size: 14px;
         }
 
-        /* СТИЛИ ДЛЯ БЛОГА */
-        .blog-page {
+        /* СТИЛИ ДЛЯ СТРАНИЦЫ ДОСТАВКА И ОПЛАТА */
+        .delivery-page {
             max-width: 1200px;
         }
         
-        .blog-grid {
+        .delivery-hero {
+            text-align: center;
+            margin: 60px 0 80px;
+        }
+        
+        .delivery-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .delivery-hero p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin: 60px 0;
         }
         
-        .blog-card {
+        .info-card {
             background: white;
+            padding: 40px 35px;
             border-radius: var(--radius);
-            overflow: hidden;
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
         
-        .blog-card:hover {
-            transform: translateY(-10px);
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
             box-shadow: var(--shadow-heavy);
         }
         
-        .blog-image {
-            height: 200px;
-            position: relative;
-        }
-        
-        .blog-date {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 6px 12px;
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-        }
-        
-        .blog-content {
-            padding: 25px;
-            flex: 1;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin-bottom: 25px;
         }
         
-        .blog-category {
-            display: inline-block;
-            background: var(--light);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            align-self: flex-start;
-        }
-        
-        .blog-content h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 15px;
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
             color: var(--dark);
-            line-height: 1.4;
         }
         
-        .blog-content > p {
+        .info-card p {
             color: var(--gray);
             line-height: 1.6;
-            margin-bottom: 25px;
-            flex: 1;
+            margin-bottom: 20px;
         }
         
-        .blog-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
+        .info-list {
+            list-style: none;
+            margin-top: 20px;
         }
         
-        .blog-author {
-            color: var(--gray);
-            font-size: 14px;
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 12px;
         }
         
-        .read-more {
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list i {
             color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: var(--transition-fast);
+            font-size: 18px;
+            width: 24px;
         }
         
-        .read-more:hover {
-            color: var(--accent-dark);
+        .highlight-box {
+            background: linear-gradient(135deg, #007AFF10, #00D4FF10);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 50px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight-box h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .highlight-box p {
+            font-size: 18px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .payment-method {
+            background: var(--light);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
             gap: 10px;
+            font-weight: 500;
+        }
+        
+        .payment-method i {
+            color: var(--accent);
+            font-size: 20px;
+        }
+        
+        .map-container {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 100px;
+            margin-top: 30px;
         }
 
         /* АДАПТИВНОСТЬ */
@@ -1531,8 +1575,24 @@
                 max-width: 95%;
             }
 
-            .blog-grid {
+            .delivery-hero h1 {
+                font-size: 36px;
+            }
+            
+            .delivery-hero p {
+                font-size: 18px;
+            }
+            
+            .info-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .highlight-box {
+                padding: 25px;
+            }
+            
+            .map-container {
+                padding: 20px;
             }
         }
 
@@ -1551,6 +1611,10 @@
             
             .catalog-sidebar {
                 width: 250px;
+            }
+            
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1616,8 +1680,8 @@
                     <div class="nav-link active" onclick="showPage('home')">Главная</div>
                     <div class="nav-link" onclick="showPage('catalog')">Каталог</div>
                     <div class="nav-link" onclick="showPage('about')">О компании</div>
+                    <div class="nav-link" onclick="showPage('delivery')">Доставка и оплата</div>
                     <div class="nav-link" onclick="showPage('contacts')">Контакты</div>
-                    <div class="nav-link" onclick="showPage('blog')">Блог</div>
                 </div>
                 
                 <button class="burger-menu" id="burgerMenu">
@@ -1642,8 +1706,8 @@
             <div class="nav-link active" onclick="showPage('home'); closeMobileNav()">Главная</div>
             <div class="nav-link" onclick="showPage('catalog'); closeMobileNav()">Каталог</div>
             <div class="nav-link" onclick="showPage('about'); closeMobileNav()">О компании</div>
+            <div class="nav-link" onclick="showPage('delivery'); closeMobileNav()">Доставка и оплата</div>
             <div class="nav-link" onclick="showPage('contacts'); closeMobileNav()">Контакты</div>
-            <div class="nav-link" onclick="showPage('blog'); closeMobileNav()">Блог</div>
         </div>
     </nav>
 
@@ -1966,6 +2030,210 @@
         </div>
     </div>
 
+    <!-- СТРАНИЦА: ДОСТАВКА И ОПЛАТА -->
+    <div id="delivery" class="page">
+        <div class="container delivery-page" style="padding-top: 120px;">
+            <div class="delivery-hero">
+                <h1>Доставка и оплата</h1>
+                <p>Удобные способы получения товаров и безопасные методы оплаты</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>🚚 Бесплатная доставка от 15 000 ₽</h3>
+                <p>Закажите на сумму от 15 000 рублей и получите бесплатную доставку по всей России. Быстрая обработка заказов, отправка в день оформления.</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Способы доставки</h3>
+                    <p>Мы предлагаем несколько удобных способов получения вашего заказа:</p>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-truck"></i>
+                            <strong>Курьерская доставка</strong> - до двери в течение 1-3 дней
+                        </li>
+                        <li>
+                            <i class="fas fa-store"></i>
+                            <strong>Самовывоз из пунктов выдачи</strong> - более 5000 пунктов по России
+                        </li>
+                        <li>
+                            <i class="fas fa-home"></i>
+                            <strong>Постаматы</strong> - круглосуточные автоматические пункты выдачи
+                        </li>
+                        <li>
+                            <i class="fas fa-box"></i>
+                            <strong>Почта России</strong> - доступно в любой населенный пункт
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Способы оплаты</h3>
+                    <p>Оплачивайте удобным для вас способом:</p>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <i class="fas fa-credit-card"></i>
+                            Банковской картой
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-mobile-alt"></i>
+                            Apple Pay / Google Pay
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-qrcode"></i>
+                            QR-код по СБП
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-money-bill-wave"></i>
+                            Наличными при получении
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-percentage"></i>
+                            В рассрочку
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 14px; color: var(--gray);">
+                            <i class="fas fa-lock" style="color: var(--success); margin-right: 8px;"></i>
+                            Все платежи защищены SSL-шифрованием. Мы не храним данные вашей карты.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Сроки доставки</h3>
+                    <p>Среднее время доставки по регионам России:</p>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: #34C759;"></i>
+                            <strong>Москва и МО:</strong> 1-2 дня
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: #007AFF;"></i>
+                            <strong>Санкт-Петербург:</strong> 1-3 дня
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: #FF9500;"></i>
+                            <strong>Крупные города:</strong> 2-4 дня
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="color: #86868B;"></i>
+                            <strong>Отдаленные регионы:</strong> 5-10 дней
+                        </li>
+                    </ul>
+                    <p style="margin-top: 20px; font-size: 14px; color: var(--gray);">
+                        <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+                        Точные сроки доставки уточняйте у менеджера после оформления заказа.
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Условия получения</h3>
+                    <p>Что нужно знать при получении заказа:</p>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #34C759;"></i>
+                            При получении проверьте целостность упаковки
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #34C759;"></i>
+                            Имеете право отказаться от товара при получении
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #34C759;"></i>
+                            Для получения нужен паспорт (для заказов от 10 000 ₽)
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #34C759;"></i>
+                            Храните чек до окончания гарантийного срока
+                        </li>
+                    </ul>
+                    <div style="margin-top: 25px; background: #FFF9F0; padding: 15px; border-radius: var(--radius-sm); border-left: 4px solid #FF9500;">
+                        <p style="font-size: 14px; color: #E65100; margin: 0;">
+                            <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
+                            Вскрытие товара до полной оплаты не допускается
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>💳 Рассрочка и кредит</h3>
+                <p>Покупайте технику в рассрочку от 3 до 12 месяцев без переплат. Оформление онлайн за 5 минут. Доступно для товаров стоимостью от 10 000 рублей.</p>
+                <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
+                    <div style="background: white; padding: 15px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark);">
+                        <div style="font-weight: 600; color: var(--dark);">0%</div>
+                        <div style="font-size: 14px; color: var(--gray);">Переплата</div>
+                    </div>
+                    <div style="background: white; padding: 15px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark);">
+                        <div style="font-weight: 600; color: var(--dark);">3-12 мес</div>
+                        <div style="font-size: 14px; color: var(--gray);">Срок</div>
+                    </div>
+                    <div style="background: white; padding: 15px 20px; border-radius: var(--radius-sm); border: 1px solid var(--light-dark);">
+                        <div style="font-weight: 600; color: var(--dark);">5 мин</div>
+                        <div style="font-size: 14px; color: var(--gray);">Оформление</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--dark);">Зоны доставки</h3>
+                <p style="color: var(--gray); margin-bottom: 20px;">Мы доставляем по всей территории России. Карта зон доставки и сроков:</p>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 30px; flex-wrap: wrap; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; height: 20px; background: #34C759; border-radius: 4px;"></div>
+                        <span>1-2 дня</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; height: 20px; background: #007AFF; border-radius: 4px;"></div>
+                        <span>2-3 дня</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; height: 20px; background: #FF9500; border-radius: 4px;"></div>
+                        <span>3-5 дней</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 20px; height: 20px; background: #86868B; border-radius: 4px;"></div>
+                        <span>5-10 дней</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #F0FFF4; border-radius: var(--radius); padding: 40px; margin: 50px 0; border-left: 4px solid #34C759;">
+                <div style="display: flex; align-items: start; gap: 20px;">
+                    <div style="width: 60px; height: 60px; background: #34C759; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; flex-shrink: 0;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--dark);">Нужна помощь с доставкой?</h3>
+                        <p style="color: var(--dark); margin-bottom: 20px;">Наши менеджеры помогут подобрать оптимальный способ доставки, рассчитать точные сроки и ответят на все вопросы.</p>
+                        <button class="btn btn-primary" onclick="showPage('contacts')">
+                            <i class="fas fa-phone-alt"></i> Связаться с менеджером
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- СТРАНИЦА: КОНТАКТЫ -->
     <div id="contacts" class="page">
         <div class="container contacts-page" style="padding-top: 120px;">
@@ -2038,75 +2306,6 @@
         </div>
     </div>
 
-    <!-- СТРАНИЦА: БЛОГ -->
-    <div id="blog" class="page">
-        <div class="container blog-page" style="padding-top: 120px;">
-            <div class="page-header">
-                <h1>Блог о технологиях</h1>
-                <p>Обзоры, новости и полезные статьи о гаджетах</p>
-            </div>
-            
-            <div class="blog-grid" id="blog-posts">
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="blog-date">15 дек 2025</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Смартфоны</div>
-                        <h3>Обзор iPhone 16 Pro: Что нового в 2025?</h3>
-                        <p>Полный размотр новейшего флагмана Apple. Тесты камеры, производительности и новых функций ИИ.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <i class="fas fa-user"></i> Даниил
-                            </div>
-                            <a href="#" class="read-more" onclick="showNotification('Статья скоро появится', 'info')">
-                                Читать <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="blog-date">10 дек 2025</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Умный дом</div>
-                        <h3>Как выбрать умные колонки в 2025?</h3>
-                        <p>Сравнение Яндекс.Станции, Apple HomePod, Google Nest и Amazon Echo. Какая лучше для России?</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <i class="fas fa-user"></i> Алексей
-                            </div>
-                            <a href="#" class="read-more" onclick="showNotification('Статья скоро появится', 'info')">
-                                Читать <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <div class="blog-date">5 дек 2025</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Ноутбуки</div>
-                        <h3>MacBook Air M4 vs Windows ультрабуки</h3>
-                        <p>Что лучше для работы и учебы в 2025? Сравнение производительности, автономности и цены.</p>
-                        <div class="blog-footer">
-                            <div class="blog-author">
-                                <i class="fas fa-user"></i> Даниил
-                            </div>
-                            <a href="#" class="read-more" onclick="showNotification('Статья скоро появится', 'info')">
-                                Читать <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ФУТЕР -->
     <footer>
         <div class="container">
@@ -2147,10 +2346,10 @@
                     <h4>Компания</h4>
                     <ul class="footer-links">
                         <li><a onclick="showPage('about')">О нас</a></li>
+                        <li><a onclick="showPage('delivery')">Доставка и оплата</a></li>
                         <li><a onclick="showPage('contacts')">Контакты</a></li>
-                        <li><a onclick="showPage('blog')">Блог</a></li>
-                        <li><a href="#" onclick="showNotification('Доставка 1-3 дня по России. Бесплатно от 10 000 ₽', 'info')">Доставка</a></li>
-                        <li><a href="#" onclick="showNotification('2 года гарантии на все товары', 'info')">Гарантия</a></li>
+                        <li><a href="#" onclick="showNotification('Гарантия 2 года на все товары', 'info')">Гарантия</a></li>
+                        <li><a href="#" onclick="showNotification('Возврат в течение 30 дней', 'info')">Возврат товара</a></li>
                     </ul>
                 </div>
                 
@@ -2158,10 +2357,10 @@
                     <h4>Помощь</h4>
                     <ul class="footer-links">
                         <li><a href="#" onclick="openCategory('popular')">Популярные товары</a></li>
-                        <li><a href="#" onclick="showNotification('Возврат в течение 30 дней', 'info')">Возврат товара</a></li>
-                        <li><a href="#" onclick="showNotification('Рассрочка на 3-12 месяцев', 'info')">Рассрочка</a></li>
+                        <li><a href="#" onclick="showNotification('Рассрочка на 3-12 месяцев без %', 'info')">Рассрочка</a></li>
                         <li><a href="mailto:support@datech.com">Техподдержка</a></li>
                         <li><a href="#" onclick="showAuthModal('login')">Личный кабинет</a></li>
+                        <li><a href="#" onclick="showNotification('Отследить заказ можно в Telegram @daab17', 'info')">Отследить заказ</a></li>
                     </ul>
                     
                     <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
@@ -2408,8 +2607,8 @@
                 'home': 'Главная',
                 'catalog': 'Каталог',
                 'about': 'О компании',
-                'contacts': 'Контакты',
-                'blog': 'Блог'
+                'delivery': 'Доставка и оплата',
+                'contacts': 'Контакты'
             };
             
             document.querySelectorAll('.nav-link').forEach(link => {
